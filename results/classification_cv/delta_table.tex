@@ -1,0 +1,29 @@
+\begin{table}[H]
+\centering
+\caption{Average Classification Metrics by Target — Delta (Regular CV $-$ Walk-Forward CV)}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{} l c c c c c c c c c c c c @{}}
+\toprule
+\textbf{Target}
+& \rotatebox{90}{\textbf{Prevalence}}
+& \rotatebox{90}{\textbf{Precision}}
+& \rotatebox{90}{\textbf{Recall}}
+& \rotatebox{90}{\textbf{F1}}
+& \rotatebox{90}{\textbf{F1 Gap}}
+& \rotatebox{90}{\textbf{AUROC}}
+& \rotatebox{90}{\textbf{AUROC Gap}}
+& \rotatebox{90}{\textbf{AP}}
+& \rotatebox{90}{\textbf{AP Gap}}
+& \rotatebox{90}{\textbf{norm. AP}}
+& \rotatebox{90}{\textbf{Precision@Top10}}
+& \rotatebox{90}{\textbf{Precision / Baseline}} \\
+\midrule
+  \texttt{target\_has\_exit} & -0.03 & -0.02 & +0.01 & -0.01 & -0.04 & +0.16 & -0.10 & -0.01 & -0.05 & +0.02 & -0.01 & +1.60 \\
+  \texttt{target\_has\_round} & -0.23 & +0.06 & +0.00 & +0.04 & -0.05 & +0.20 & -0.07 & +0.06 & -0.07 & +0.30 & +0.07 & +1.37 \\
+  \texttt{target\_employee\_delta\_upper\_q} & +0.04 & +0.08 & +0.02 & +0.07 & -0.07 & +0.05 & -0.05 & +0.10 & -0.10 & +0.10 & +0.18 & +0.24 \\
+  \texttt{target\_funding\_delta\_upper\_q} & -0.04 & +0.02 & -0.01 & +0.01 & -0.01 & +0.04 & -0.04 & +0.01 & -0.01 & +0.04 & +0.02 & +0.36 \\
+  \texttt{target\_valuation\_delta\_upper\_q} & +0.00 & +0.06 & +0.03 & +0.06 & -0.05 & +0.04 & -0.04 & +0.05 & -0.04 & +0.06 & +0.09 & +0.45 \\
+\bottomrule
+\end{tabular}
+\end{table}

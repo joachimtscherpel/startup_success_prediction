@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\caption{SHAP Feature Group Importance — Delta (Regular CV $-$ Walk-Forward CV)}
+\label{tab:shap_feature_group_importance_delta}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{} l c c c c c c @{}}
+\toprule
+\textbf{Target} & \rotatebox{90}{\textbf{Past (\%)}} & \rotatebox{90}{\textbf{10y TBY (\%)}} & \rotatebox{90}{\textbf{Scores (\%)}} & \rotatebox{90}{\textbf{Embeddings (\%)}} & \rotatebox{90}{\textbf{Cat. Company (\%)}} & \rotatebox{90}{\textbf{Founders (\%)}} \\
+\midrule
+  \texttt{target\_has\_exit} & +47.7 & +6.3 & -4.9 & -30.4 & -4.7 & -14.1 \\
+  \texttt{target\_has\_round} & +41.1 & +21.7 & -5.4 & -11.6 & -16.3 & -29.5 \\
+  \texttt{target\_employee\_delta\_upper\_q} & -1.6 & +1.6 & -1.0 & +5.4 & +0.5 & -5.0 \\
+  \texttt{target\_funding\_delta\_upper\_q} & -1.0 & +0.0 & -1.0 & +8.4 & -1.2 & -5.4 \\
+  \texttt{target\_valuation\_delta\_upper\_q} & +0.2 & +0.3 & +0.4 & +5.2 & -1.6 & -4.4 \\
+\bottomrule
+\end{tabular}
+\end{table}

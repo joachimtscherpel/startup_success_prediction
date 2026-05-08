@@ -1,0 +1,44 @@
+# python3.12 needed for SpaCy
+
+jupyter
+ipykernel
+ipywidgets
+
+# Data science
+openpyxl
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+quantile-forest
+xgboost
+shap
+imblearn
+
+# Data handling
+pyarrow
+
+# Transformers
+transformers
+sentence-transformers
+
+# LLMs
+ollama
+groq
+openai
+
+# Linguisitc libraries
+textblob
+nltk
+spacy
+
+# Dot environment for API key
+dotenv
+
+# Countries
+pycountry
+
+# Testing
+pytest
+pytest-cov

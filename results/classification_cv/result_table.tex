@@ -1,0 +1,29 @@
+\begin{table}[H]
+\centering
+\caption{Average Classification Metrics by Target}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{} l c c c c c c c c c c c c @{}}
+\toprule
+\textbf{Target}
+& \rotatebox{90}{\textbf{Prevalence}}
+& \rotatebox{90}{\textbf{Precision}}
+& \rotatebox{90}{\textbf{Recall}}
+& \rotatebox{90}{\textbf{F1}}
+& \rotatebox{90}{\textbf{F1 Gap}}
+& \rotatebox{90}{\textbf{AUROC}}
+& \rotatebox{90}{\textbf{AUROC Gap}}
+& \rotatebox{90}{\textbf{AP}}
+& \rotatebox{90}{\textbf{AP Gap}}
+& \rotatebox{90}{\textbf{norm. AP}}
+& \rotatebox{90}{\textbf{Precision@Top10}}
+& \rotatebox{90}{\textbf{Precision / Baseline}} \\
+\midrule
+  \texttt{target\_has\_exit} & 0.04 & 0.13 & 0.27 & 0.15 & 0.15 & 0.78 & 0.10 & 0.13 & 0.15 & 0.10 & 0.19 & 3.89 \\
+  \texttt{target\_has\_round} & 0.41 & 0.73 & 0.96 & 0.83 & 0.02 & 0.88 & 0.02 & 0.83 & 0.05 & 0.68 & 0.93 & 2.41 \\
+  \texttt{target\_employee\_delta\_upper\_q} & 0.28 & 0.45 & 0.65 & 0.52 & 0.10 & 0.75 & 0.09 & 0.53 & 0.16 & 0.35 & 0.73 & 2.26 \\
+  \texttt{target\_funding\_delta\_upper\_q} & 0.29 & 0.55 & 0.66 & 0.58 & 0.10 & 0.81 & 0.08 & 0.62 & 0.16 & 0.48 & 0.78 & 2.59 \\
+  \texttt{target\_valuation\_delta\_upper\_q} & 0.28 & 0.45 & 0.67 & 0.52 & 0.11 & 0.75 & 0.11 & 0.52 & 0.19 & 0.34 & 0.65 & 2.14 \\
+\bottomrule
+\end{tabular}
+\end{table}

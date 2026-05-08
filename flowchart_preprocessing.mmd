@@ -1,0 +1,33 @@
+%% compile with:
+%% colima start
+%% docker run --rm -v "$(pwd)":/data minlag/mermaid-cli -i /data/flowchart_preprocessing.mmd -o /data/flowchart_preprocessing.pdf -b white && pdfcrop flowchart_preprocessing.pdf flowchart_preprocessing.pdf
+
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#dbeafe", "primaryTextColor": "#1e3a5f", "primaryBorderColor": "#93c5fd", "lineColor": "#60a5fa", "clusterBkg": "#f0f9ff", "clusterBorder": "#93c5fd", "edgeLabelBackground": "#ffffff", "fontSize": "20px", "fontFamily": "Arial, Helvetica, sans-serif"}}}%%
+flowchart TD
+A["dr_raw.pkl"] --> PREP
+subgraph PREP ["1_Preprocessing"]
+B["ColumnRenamer"] --> C["DuplicateDropper"]
+C --> D["ColumnDropper"]
+D --> E["Prefilterer<br/>(drop spinouts)"]
+E --> F["ListParser"]
+end
+PREP --> G["dr_preprocessed.pkl"]
+H["FX Rate Download<br/>(XXX→USD)"]
+G --> LEAK
+subgraph LEAK ["2_Leakage_Masking"]
+I["Filter out success sentences<br/>with LLM zero-shot prompting<br/>(mistral:7b-instruct)"] --> J
+J["Filter out failure sentences<br/>with LLM zero-shot prompting<br/>(mistral:7b-instruct)"] --> K
+K["SpaCy NER masking<br/>names, locations, dates"]
+end
+LEAK --> L["dr_masked.pkl"]
+L --> SCORE
+L --> EMB
+subgraph SCORE ["3_LLM_Scoring"]
+M["Ollama: gemma3 and llama3.2:3b,<br/>Azure: kimi K2.5 and GPT-4o,<br/>8 socres: sty, tec, mak, dow, mar, nov, via, atr"]
+end
+subgraph EMB ["4_Embeddings"]
+N["Ollama: embeddinggemma, qwen3-embedding<br/>HuggingFace:<br/>intfloat_e5-base-v2,<br/>all-MiniLM-L12-v2,<br/>all-mpnet-base-v2,<br/>paraphrase-mpnet-base-v2"]
+end
+SCORE --> O["dr_scores.pkl"]
+EMB --> P["embeddings/{model}.pkl"]
+O & P & G & H --> Q[/"Training Pipeline"/]

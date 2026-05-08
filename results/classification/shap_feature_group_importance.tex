@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\caption{Average SHAP Feature Importance by Target Group}
+\label{tab:shap_feature_group_importance}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{} l c c c c c c @{}}
+\toprule
+\textbf{Target} & \rotatebox{90}{\textbf{Founders (\%)}} & \rotatebox{90}{\textbf{Embeddings (\%)}} & \rotatebox{90}{\textbf{Cat. Company (\%)}} & \rotatebox{90}{\textbf{Past (\%)}} & \rotatebox{90}{\textbf{Scores (\%)}} & \rotatebox{90}{\textbf{10y TBY (\%)}} \\
+\midrule
+  \texttt{target\_has\_exit} & 27.2 & 49.5 & 7.6 & 8.8 & 6.4 & 0.6 \\
+  \texttt{target\_has\_round} & 42.2 & 18.9 & 24.7 & 5.4 & 8.2 & 0.6 \\
+  \texttt{target\_employee\_delta\_upper\_q} & 36.3 & 34.3 & 10.4 & 9.7 & 8.4 & 1.0 \\
+  \texttt{target\_funding\_delta\_upper\_q} & 36.5 & 32.9 & 14.2 & 13.1 & 2.7 & 0.7 \\
+  \texttt{target\_valuation\_delta\_upper\_q} & 34.7 & 36.2 & 17.1 & 9.4 & 2.3 & 0.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
